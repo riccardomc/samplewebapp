@@ -32,3 +32,26 @@ the application will be available on `localhost:8080`:
 $ curl localhost:8080/something
 Hi there, I love something!
 ```
+
+## Deploy to minikube
+
+Assuming you have a minikube environment up and running, the app can be built
+using the minikube docker:
+```
+$ eval $(minikube docker-env)
+make docker
+```
+Then run it in minikube with:
+```
+kubectl run samplewebapp --image riccardomc/samplewebapp:0.1
+```
+Once it is running, the pod will be reachable via `kubectl proxy`:
+```
+$ kubectl get pods
+NAME                           READY     STATUS    RESTARTS   AGE
+samplewebapp-214130885-h6lvj   1/1       Running   0          10m
+
+$ curl http://localhost:8001/api/v1/proxy/namespaces/default/pods/samplewebapp-214130885-h6lvj:8080/something
+Hi there, I love something!%
+```
+
