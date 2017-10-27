@@ -39,11 +39,11 @@ Assuming you have a minikube environment up and running, the app can be built
 using the minikube docker:
 ```
 $ eval $(minikube docker-env)
-make docker
+$ make docker
 ```
 Then run it in minikube with:
 ```
-kubectl run samplewebapp --image riccardomc/samplewebapp:0.1
+$ kubectl run samplewebapp --image riccardomc/samplewebapp:0.1
 ```
 Once it is running, the pod will be reachable via `kubectl proxy`:
 ```

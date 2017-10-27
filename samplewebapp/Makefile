@@ -7,7 +7,7 @@ docker: Dockerfile samplewebapp
 	docker build -t riccardomc/samplewebapp:0.1 .
 
 docker-run: docker
-	docker run -p 8080:8080 -ti riccardomc/samplewebapp:0.1
+	docker run -p 9990:8080 -ti riccardomc/samplewebapp:0.1
 
 clean:
 	rm -rf samplewebapp
