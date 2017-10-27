@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: multiwebz
+  labels:
+    app: multiwebz
+spec:
+  containers:
+    - name: samplewebapp
+      image: riccardomc/samplewebapp:0.1
+    - name: webserver
+      image: riccardomc/webserver:0.1
+      env:
+        - name: APP
+          value: http://localhost:8080
