@@ -1,6 +1,22 @@
 <html>
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="app.js" defer></script>
+  </head>
   <body>
     <h1>Yo!</h1>
-    This is some static content
+    This is some static content.
+    </br>
+    If you want to use the app, you should click <a href="/app/">here</a>.
+    </br>
+    <div id="app">
+      <ol>
+        <li v-for="m in messages">
+          {{ m }}
+        </li>
+      </ol>
+
+      {{ messages }}
+    </div>
   </body>
 </html>
